@@ -1,5 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.IntStream;
 public class Main{
     public static void main(String[] args) {
 
@@ -23,16 +25,36 @@ public class Main{
                 if (productsList.isEmpty()){ 
                     System.out.println("There is no itens yet.");
                 } else{
-                    System.out.println("Itens List");
+                    /*System.out.println("Itens List");
+                    AtomicInteger indice = new AtomicInteger(1);
                     productsList.forEach(item -> {
-                    System.out.println(item);
+                    System.out.println(indice.getAndIncrement() + " - " + item);
+                    });*/
+                
+                    System.out.println("Itens List");
+
+                    IntStream.range(0, productsList.size())
+                    .forEach(i -> {
+                    System.out.println((i + 1) + " - " + productsList.get(i));
                     });
                 }
+                
                 break;
             case 3:
+                if (productsList.isEmpty()){ 
+                    System.out.println("There is no itens yet.");
+                } else{
+                    System.out.println("Inform the profuct name.");
+                    product  = sc.nextLine();
+                    productsList.remove(product);
+                    
+                    System.out.printf("Item removed: %s \n",product);
+                };
+                break;
             case 4:
                 break;
             };
         }
     }
 }
+            

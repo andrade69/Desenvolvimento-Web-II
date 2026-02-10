@@ -7,8 +7,9 @@ public class Main{
 
         Scanner sc = new Scanner(System.in);
         int choice=0;
+        
         ArrayList<String> productsList = new ArrayList<String>();
-
+        
         while (choice!=4){
             System.out.println("Chose what you wnat do.");
             System.out.println("1- Add \n 2-List \n 3-Remove \n 4-Out ");
@@ -25,18 +26,32 @@ public class Main{
                 if (productsList.isEmpty()){ 
                     System.out.println("There is no itens yet.");
                 } else{
-                    /*System.out.println("Itens List");
+                    /*
+                    Execuções que também deram certo
+                    
+                    AtomicInteger: 
+                    System.out.println("Itens List");
                     AtomicInteger indice = new AtomicInteger(1);
                     productsList.forEach(item -> {
                     System.out.println(indice.getAndIncrement() + " - " + item);
-                    });*/
+                    });
                 
+                    intStream:
                     System.out.println("Itens List");
 
                     IntStream.range(0, productsList.size())
                     .forEach(i -> {
                     System.out.println((i + 1) + " - " + productsList.get(i));
+                    });*/
+                    
+                    
+                    System.out.println("Itens list");
+                    productsList.forEach(item -> {
+                    int indice = productsList.indexOf(item);
+                    System.out.println((indice + 1) + " - " + item);
                     });
+                    
+                    
                 }
                 
                 break;

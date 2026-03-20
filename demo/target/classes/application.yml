@@ -1,0 +1,13 @@
+aplication:
+  name: demo
+
+treinamento:
+  nome: Spring Expert
+
+server:
+  port: 8080
+
+Spring:
+  profiles:
+    # active: dev
+    active: prod

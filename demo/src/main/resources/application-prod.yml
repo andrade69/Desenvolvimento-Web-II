@@ -1,0 +1,8 @@
+aplication:
+  name: demo
+
+treinamento:
+  nome: Prod
+
+server:
+  port: 8082
